@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Table Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Link Bootstrap and jQuery -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- jQuery function to add row dynamically to Bootstrap table -->
+  <script type="text/javascript">
+  function AddRow()
+  {
+    $('#userTable').append('<tr><td>' + $('#userName').val() + '</td><td>' + $('#userAddress').val()  + '</td><td>' + $('#userEmail').val() + '</td></tr>');
+  }
+</script>
+
+</head>
+<body>
+
+<div class="container">
+  <!-- Bootstrap Table Example -->
+  <h2>Bootstrap Table Example</h2>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="userName">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="userName" name="userName">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="userAddress">Address:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="userAddress" name="userAddress">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="userEmail">Email:</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="userEmail" placeholder="Enter email" name="userEmail">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="userPassword">Password:</label>
+      <div class="col-sm-10">          
+        <input type="password" class="form-control" id="userPassword" placeholder="Enter password" name="userPassword">
+      </div>
+    </div>
+
+    <!-- Button to add data in bootstrap table -->
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" class="btn btn-success" onclick="AddRow()">Show data in table</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Bootstrap table -->
+<div class="container">
+  <h2>User Table</h2>
+  <table id="userTable" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sudesh</td>
+        <td>Goa</td>
+        <td>sudesh@gmail.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
